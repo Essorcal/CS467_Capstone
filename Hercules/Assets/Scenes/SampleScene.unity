@@ -149,6 +149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23695895be308ed45ad8d108fe0c0378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TestMusic: {fileID: 8300000, guid: 9e748a4de002c8a4aa5c5dc4b7a8dee1, type: 3}
+  TestFX: {fileID: 8300000, guid: e44bb15d0be184e228244208f1a94e2c, type: 3}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -312,6 +314,26 @@ Prefab:
     - target: {fileID: 4025905648434988, guid: 1fe5c74aef6385441b8025539fd79fa2, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 82491192723511490, guid: 1fe5c74aef6385441b8025539fd79fa2,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 82557096549538896, guid: 1fe5c74aef6385441b8025539fd79fa2,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 82557096549538896, guid: 1fe5c74aef6385441b8025539fd79fa2,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82491192723511490, guid: 1fe5c74aef6385441b8025539fd79fa2,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fe5c74aef6385441b8025539fd79fa2, type: 2}

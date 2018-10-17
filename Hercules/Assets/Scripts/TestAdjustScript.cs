@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class TestAdjustScript : MonoBehaviour
 {
-
+    public AudioClip TestMusic;
+    public AudioClip TestFX;
     // Use this for initialization
+
     void OnGUI()
     {
         if (GUI.Button(new Rect(10, 100, 100, 30), "Health up"))
@@ -31,6 +33,18 @@ public class TestAdjustScript : MonoBehaviour
         if (GUI.Button(new Rect(10, 250, 100, 30), "Load"))
         {
             GameController.control.Load();
+        }
+        if (GUI.Button(new Rect(10, 280, 100, 30), "Music"))
+        {
+            AudioManager.Instance.PlayMusic(TestMusic);
+        }
+        if (GUI.Button(new Rect(120, 280, 100, 30), "Stop"))
+        {
+            AudioManager.Instance.StopMusic(TestMusic);
+        }
+        if (GUI.Button(new Rect(10, 310, 100, 30), "SFX"))
+        {
+            AudioManager.Instance.Play(TestFX);
         }
     }
 }
