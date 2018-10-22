@@ -21,7 +21,7 @@ public class PlayerControllerScript : MonoBehaviour
         originSpeed = maxSpeed;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         Vector2 move = Vector2.zero;
         rigidbody2D = GetComponent<Rigidbody2D>();
@@ -43,19 +43,7 @@ public class PlayerControllerScript : MonoBehaviour
         else
             rigidbody2D.velocity = new Vector2(0, 0);
 
-        maxSpeed = originSpeed;     //Reset the player's speed;
-
-        //movePlayer = false;
-        //if (anim.GetCurrentAnimatorStateInfo(0).IsTag("up") && currentDir == dir.UP) movePlayer = true;
-        //if (anim.GetCurrentAnimatorStateInfo(0).IsTag("down") && currentDir == dir.DOWN) movePlayer = true;
-        //if (anim.GetCurrentAnimatorStateInfo(0).IsTag("left") && currentDir == dir.LEFT) movePlayer = true;
-        //if (anim.GetCurrentAnimatorStateInfo(0).IsTag("right") && currentDir == dir.RIGHT) movePlayer = true;
-
-        //if (movePlayer)
-        //    rigidbody2D.velocity = new Vector2(move.x * maxSpeed, move.y * maxSpeed);    //Move the player
-        //else
-        //    rigidbody2D.velocity = new Vector2(0, 0);
-
+        maxSpeed = originSpeed;     //Reset the player's speed
     }
 
     //Gets the current direction the player is running
