@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class PlayerControllerScript : MonoBehaviour
 {
-    enum dir { UP = 0, DOWN, LEFT, RIGHT };
-    dir lastDir = dir.DOWN, currentDir = dir.DOWN;
     public float runSpeedMultiplier = 1.05f;
     public float maxSpeed = .75f;
     float originSpeed;
-    bool movePlayer, facingRight = true;
+    private bool playerMoving;
     new Rigidbody2D rigidbody2D;
+    Vector2 move, lastMove;
 
 
     Animator anim;
@@ -19,64 +18,40 @@ public class PlayerControllerScript : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         originSpeed = maxSpeed;
+        rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        Vector2 move = Vector2.zero;
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        move = Vector2.zero;
+        playerMoving = false;
 
-        move.x = Input.GetAxis("Horizontal"); //Get the horizontal axis
-        move.y = Input.GetAxis("Vertical");     //Get the vertical axis
-
-        anim.SetFloat("verticalSpeed", move.x);    //verticalSpeed variable in the animator controller to move.x
-        anim.SetFloat("horizontalSpeed", move.y);   //horizontalSpeed variable in the animator controller to move.y
-
-        lastDir = currentDir = GetDirection(move);
-        SetIdle(currentDir);
 
         if (Input.GetKey("left shift") || Input.GetKey("right shift"))  //Add the running multiplier
+        {
             maxSpeed = 4 * runSpeedMultiplier;
+            anim.speed = 2F;                        //Increase the animation speed for running
+        } else
+        {
+            anim.speed = 1;
+        }
 
-        if (anim.GetCurrentAnimatorStateInfo(0).IsTag("move"))
-            rigidbody2D.velocity = new Vector2(move.x * maxSpeed, move.y * maxSpeed);    //Move the player
-        else
-            rigidbody2D.velocity = new Vector2(0, 0);
+        lastMove.x = move.x = Mathf.Lerp(0, Input.GetAxis("Horizontal") * maxSpeed, 0.8f); //Get the horizontal axis, interpolate between 0 and the input by 0.8
+        lastMove.y = move.y = Mathf.Lerp(0, Input.GetAxis("Vertical") * maxSpeed, 0.8f);   //Get the vertical axis, interpolate between 0 and the input by 0.8
 
+        if (move.x != 0 || move.y != 0)
+        {
+            playerMoving = true;
+            anim.SetFloat("lastVert", lastMove.x);      //lastVert variable in the animator controller to move.x
+            anim.SetFloat("lastHorz", lastMove.y);      //lastHorz variable in the animator controller to move.y
+        }
+            
+        anim.SetFloat("verticalSpeed", move.x);     //verticalSpeed variable in the animator controller to move.x
+        anim.SetFloat("horizontalSpeed", move.y);   //horizontalSpeed variable in the animator controller to move.y
+        anim.SetBool("playerMoving", playerMoving); //Set the playerMoving parameter in the animator
+
+        rigidbody2D.velocity = new Vector2(move.x, move.y);    //Move the player
         maxSpeed = originSpeed;     //Reset the player's speed
-    }
-
-    //Gets the current direction the player is running
-    dir GetDirection(Vector2 move)
-    {
-        if (move.x >= .01 && move.y >= .01)
-            return dir.UP;
-        if (move.x >= .01 && move.y <= -.01)
-            return dir.RIGHT;
-        if (move.x <= -.01 && move.y >= .01)
-            return dir.LEFT;
-        if (move.x <= -.01 && move.y <= -.01) 
-            return dir.DOWN; 
-
-        if (move.x >= .01)
-            return dir.RIGHT;
-        if (move.x <= -.01)
-            return dir.LEFT;
-        if (move.y >= .01)
-            return dir.UP;
-        if (move.y <= -.01)
-            return dir.DOWN;
-
-        return lastDir;
-    }
-
-    //Sets the direction the player will face when He/She is idle
-    void SetIdle(dir direction)
-    {
-        anim.SetBool("up", direction == dir.UP ? true : false);
-        anim.SetBool("down", direction == dir.DOWN ? true : false);
-        anim.SetBool("left", direction == dir.LEFT ? true : false);
-        anim.SetBool("right", direction == dir.RIGHT ? true : false);
     }
 }
 
