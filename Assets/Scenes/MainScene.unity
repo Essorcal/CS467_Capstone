@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 242305246}
   - component: {fileID: 242305245}
   - component: {fileID: 242305243}
+  - component: {fileID: 242305244}
   m_Layer: 0
   m_Name: Golem
   m_TagString: Untagged
@@ -224,6 +225,19 @@ PolygonCollider2D:
       - {x: 0.33125, y: -0.20625}
       - {x: 0.44375, y: -0.30625}
       - {x: 0.39375, y: -0.36875}
+--- !u!114 &242305244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 242305242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed0e53086d3ee68438db81a435b6e295, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runSpeedMultiplier: 1.05
+  maxSpeed: 0.75
 --- !u!95 &242305245
 Animator:
   serializedVersion: 3
@@ -297,7 +311,7 @@ SpriteRenderer:
   m_SortingLayerID: -2063532323
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ab6c4b1d13aa81a4b888686b2387c5ff, type: 3}
+  m_Sprite: {fileID: 21300010, guid: ab6c4b1d13aa81a4b888686b2387c5ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -437,7 +451,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 987839930}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed0e53086d3ee68438db81a435b6e295, type: 3}
   m_Name: 
