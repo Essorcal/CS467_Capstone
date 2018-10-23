@@ -356,7 +356,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 224861948677305866}
-  - component: {fileID: 114222584108966432}
+  - component: {fileID: 114112863727706938}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -390,7 +390,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224252173073911466}
   - component: {fileID: 114514752468249504}
-  - component: {fileID: 114358297417258954}
+  - component: {fileID: 114199710861645336}
   m_Layer: 5
   m_Name: MusicVolumeSlider
   m_TagString: Untagged
@@ -561,7 +561,7 @@ MonoBehaviour:
     topRight: {r: 1, g: 1, b: 1, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 11400000, guid: dabdbf6a2073b7f49bfd8209d3ad5d8c,
+  m_fontColorGradientPreset: {fileID: 11400000, guid: 91df7338a5d7ea54f8b19110a3ec1d75,
     type: 2}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -678,7 +678,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114222584108966432}
+      - m_Target: {fileID: 114112863727706938}
         m_MethodName: NewGame
         m_Mode: 1
         m_Arguments:
@@ -718,6 +718,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114112863727706938
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1673429508750640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcdbe604f0c055a488ebb8511e5effca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114186288235518930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -781,17 +792,18 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114222584108966432
+--- !u!114 &114199710861645336
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1673429508750640}
+  m_GameObject: {fileID: 1824315854287144}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb69e9881049855468bb7731cabdb02a, type: 3}
+  m_Script: {fileID: 11500000, guid: 1aa409db4e51aaa4ca4087e1b14c1e10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicVolume: {fileID: 114514752468249504}
 --- !u!114 &114251300162114802
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -855,8 +867,7 @@ MonoBehaviour:
     topRight: {r: 1, g: 1, b: 1, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 11400000, guid: dabdbf6a2073b7f49bfd8209d3ad5d8c,
-    type: 2}
+  m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_overrideHtmlColors: 0
@@ -999,7 +1010,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114222584108966432}
+      - m_Target: {fileID: 114112863727706938}
         m_MethodName: LoadGame
         m_Mode: 1
         m_Arguments:
@@ -1012,18 +1023,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114358297417258954
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1824315854287144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e614e0ada2b70e449bac3c068fd9a883, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musicVolume: {fileID: 114514752468249504}
 --- !u!114 &114362874158329430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1135,7 +1134,7 @@ MonoBehaviour:
     topRight: {r: 1, g: 1, b: 1, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 11400000, guid: dabdbf6a2073b7f49bfd8209d3ad5d8c,
+  m_fontColorGradientPreset: {fileID: 11400000, guid: 91df7338a5d7ea54f8b19110a3ec1d75,
     type: 2}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -1249,7 +1248,7 @@ MonoBehaviour:
     topRight: {r: 1, g: 1, b: 1, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 11400000, guid: dabdbf6a2073b7f49bfd8209d3ad5d8c,
+  m_fontColorGradientPreset: {fileID: 11400000, guid: 91df7338a5d7ea54f8b19110a3ec1d75,
     type: 2}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -1438,7 +1437,7 @@ MonoBehaviour:
     topRight: {r: 1, g: 1, b: 1, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 11400000, guid: dabdbf6a2073b7f49bfd8209d3ad5d8c,
+  m_fontColorGradientPreset: {fileID: 11400000, guid: 91df7338a5d7ea54f8b19110a3ec1d75,
     type: 2}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -1535,7 +1534,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 82c947f57ae3efc4ab0cf48b42c75433, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9b484a8efc8cc0246813d6b3b432b960, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1606,7 +1605,7 @@ MonoBehaviour:
     topRight: {r: 1, g: 1, b: 1, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 11400000, guid: dabdbf6a2073b7f49bfd8209d3ad5d8c,
+  m_fontColorGradientPreset: {fileID: 11400000, guid: 91df7338a5d7ea54f8b19110a3ec1d75,
     type: 2}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -1747,7 +1746,7 @@ MonoBehaviour:
     topRight: {r: 1, g: 1, b: 1, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 11400000, guid: dabdbf6a2073b7f49bfd8209d3ad5d8c,
+  m_fontColorGradientPreset: {fileID: 11400000, guid: 91df7338a5d7ea54f8b19110a3ec1d75,
     type: 2}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -1970,7 +1969,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114222584108966432}
+      - m_Target: {fileID: 114112863727706938}
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -2065,9 +2064,9 @@ MonoBehaviour:
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
     topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 11400000, guid: dabdbf6a2073b7f49bfd8209d3ad5d8c,
+    bottomLeft: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 1}
+    bottomRight: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
+  m_fontColorGradientPreset: {fileID: 11400000, guid: 91df7338a5d7ea54f8b19110a3ec1d75,
     type: 2}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
