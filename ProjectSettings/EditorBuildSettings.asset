@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 6f373f9357a536a41bbdd3e54d64da78
   - enabled: 1
-    path: Assets/Scenes/MainScene.unity
-    guid: 3e02674b8386eec41a26f46a07408f75
+    path: Assets/Scenes/CalebDevScene.unity
+    guid: 6c49c0f3e85a65d45b8e9fff2f4c9c6d
   m_configObjects: {}

@@ -44,6 +44,12 @@ public class AudioManager : MonoBehaviour
         MusicSource.Play();
     }
 
+    // Use this for initialization
+    void Start()
+    {
+        PlayerPrefs.GetFloat("CurVol");
+    }
+
     /* Play a random clip from an array, and randomize the pitch slightly.
     public void RandomSoundEffect(params AudioClip[] clips)
     {

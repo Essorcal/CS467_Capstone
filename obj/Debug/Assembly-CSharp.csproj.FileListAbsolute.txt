@@ -11,8 +11,6 @@ D:\My Documents\GitHub\CS467_Capstone\Temp\bin\Debug\System.Xml.dll
 D:\My Documents\GitHub\CS467_Capstone\Temp\bin\Debug\System.Xml.Linq.dll
 D:\My Documents\GitHub\CS467_Capstone\Temp\bin\Debug\Unity.Locator.dll
 D:\My Documents\GitHub\CS467_Capstone\Temp\bin\Debug\Unity.PackageManagerUI.Editor.dll
-D:\My Documents\GitHub\CS467_Capstone\Temp\bin\Debug\Unity.TextMeshPro.dll
-D:\My Documents\GitHub\CS467_Capstone\Temp\bin\Debug\Unity.TextMeshPro.Editor.dll
 D:\My Documents\GitHub\CS467_Capstone\Temp\bin\Debug\UnityEditor.dll
 D:\My Documents\GitHub\CS467_Capstone\Temp\bin\Debug\UnityEditor.StandardEvents.dll
 D:\My Documents\GitHub\CS467_Capstone\Temp\bin\Debug\UnityEngine.AccessibilityModule.dll
@@ -168,3 +166,5 @@ D:\My Documents\GitHub\CS467_Capstone\obj\Debug\Assembly-CSharp.csproj.CoreCompi
 D:\My Documents\GitHub\CS467_Capstone\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 D:\My Documents\GitHub\CS467_Capstone\obj\Debug\Assembly-CSharp.dll
 D:\My Documents\GitHub\CS467_Capstone\obj\Debug\Assembly-CSharp.pdb
+D:\My Documents\GitHub\CS467_Capstone\Temp\bin\Debug\TextMeshPro-2017.3-Editor.dll
+D:\My Documents\GitHub\CS467_Capstone\Temp\bin\Debug\TextMeshPro-2017.3-Runtime.dll

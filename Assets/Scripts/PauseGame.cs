@@ -6,8 +6,8 @@ public class PauseGame : MonoBehaviour {
 
     public bool gamePaused = false;
     public GameObject pauseMenu;
-    
-	void Update () {
+
+    void Update () {
 	    if (Input.GetButtonDown("Cancel"))
         {
             if (gamePaused == false)
@@ -15,11 +15,14 @@ public class PauseGame : MonoBehaviour {
                 Time.timeScale = 0;
                 gamePaused = true;
                 Cursor.visible = true;
-                pauseMenu.SetActive(true);
+                //pauseMenu.SetActive(true);
+                transform.GetChild(0).gameObject.SetActive(true);
+
             }
             else
             {
-                pauseMenu.SetActive(false);
+                //pauseMenu.SetActive(false);
+                transform.GetChild(0).gameObject.SetActive(false);
                 Cursor.visible = false;
                 gamePaused = false;
                 Time.timeScale = 1;

@@ -8,7 +8,7 @@ using System.IO;
 public class GameController : MonoBehaviour {
 
     public static GameController control;
-
+    
     //Player Stats
     [Header("Player Stats")]
     public float playerHealth;
@@ -40,6 +40,11 @@ public class GameController : MonoBehaviour {
     public float plasmaKillCount;
     public float twilightKillCount;
 
+    //options
+    [Header("Options")]
+    public float volumeLevel;
+    public float sfxLevel;
+
     void Awake () {
         if(control == null)
         {
@@ -54,9 +59,12 @@ public class GameController : MonoBehaviour {
 
     // Update is called once per frame
     void OnGUI()
-    {
-        GUI.Label(new Rect(10, 10, 100, 30), "Health: " + playerHealth);
-        GUI.Label(new Rect(10, 30, 100, 30), "Sanity: " + playerSanity);
+    {        
+        if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "MainMenu")
+        {
+            GUI.Label(new Rect(10, 10, 100, 30), "Health: " + playerHealth);
+            GUI.Label(new Rect(10, 30, 100, 30), "Sanity: " + playerSanity);
+        }     
     }
 
     public void Save()
@@ -84,7 +92,9 @@ public class GameController : MonoBehaviour {
             goblinKillCount = goblinKillCount,
             voidKillCount = voidKillCount,
             plasmaKillCount = plasmaKillCount,
-            twilightKillCount = twilightKillCount
+            twilightKillCount = twilightKillCount,
+            volumeLevel = volumeLevel,
+            sfxLevel = sfxLevel
     };
 
         bf.Serialize(file, data);
@@ -119,6 +129,8 @@ public class GameController : MonoBehaviour {
             voidKillCount = data.voidKillCount;
             plasmaKillCount = data.plasmaKillCount;
             twilightKillCount = data.twilightKillCount;
+            volumeLevel = data.volumeLevel;
+            sfxLevel = data.sfxLevel;
         }
     }
 }
@@ -152,4 +164,8 @@ class GameData
     public float voidKillCount;
     public float plasmaKillCount;
     public float twilightKillCount;
+
+    //options
+    public float volumeLevel;
+    public float sfxLevel;
 }
