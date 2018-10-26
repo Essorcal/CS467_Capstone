@@ -8,6 +8,7 @@ using System.IO;
 public class GameController : MonoBehaviour {
 
     public static GameController control;
+    public GameObject EnemyController, player;
 
     //Player Stats
     [Header("Player Stats")]
@@ -41,7 +42,7 @@ public class GameController : MonoBehaviour {
     public float twilightKillCount;
 
     void Awake () {
-        if(control == null)
+        if (control == null)
         {
             DontDestroyOnLoad(gameObject);
             control = this;
@@ -52,7 +53,11 @@ public class GameController : MonoBehaviour {
         }
 	}
 
-    // Update is called once per frame
+    void FixedUpdate()
+    {
+        EnemyController.GetComponent<EnemyController>().MoveEnemies(player.transform.position);
+    }
+
     void OnGUI()
     {
         GUI.Label(new Rect(10, 10, 100, 30), "Health: " + playerHealth);

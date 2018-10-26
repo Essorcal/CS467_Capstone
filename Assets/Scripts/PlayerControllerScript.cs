@@ -4,40 +4,68 @@ using UnityEngine;
 
 public class PlayerControllerScript : MonoBehaviour
 {
+    public GameObject character;
+    private GameObject weapon;
     public float runSpeedMultiplier = 1.05f;
-    public float maxSpeed = .75f;
+    public float maxSpeed, attackTime;
     float originSpeed;
-    private bool playerMoving;
+    private bool playerMoving, attacking;
+    private float attackTimeCounter;
     new Rigidbody2D rigidbody2D;
     Vector2 move, lastMove;
+    string action = "slashAttack";
 
 
     Animator anim;
 
     void Start()
     {
-        anim = GetComponent<Animator>();
+        anim = character.GetComponent<Animator>();
         originSpeed = maxSpeed;
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        rigidbody2D = character.GetComponent<Rigidbody2D>();
+
+        weapon = character.transform.Find("Weapon").gameObject;
+        weapon.SetActive(false);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         move = Vector2.zero;
         playerMoving = false;
 
+        if(Input.GetMouseButtonDown(0))
+        {
+            weapon.SetActive(true);
+            anim.SetBool("attacking", true); //Set the specified trigger in the animator
+            anim.SetTrigger(action);
+            attacking = true;
+            attackTimeCounter = attackTime;
+        } 
 
-        if (Input.GetKey("left shift") || Input.GetKey("right shift"))  //Add the running multiplier
+        if (attackTimeCounter > 0)
+            attackTimeCounter -= Time.deltaTime;
+        else
         {
-            maxSpeed = 4 * runSpeedMultiplier;
-            anim.speed = 2F;                        //Increase the animation speed for running
-        } else
-        {
-            anim.speed = 1;
+            weapon.SetActive(false);
+            attacking = false;
+            anim.SetBool("attacking", false);
         }
+            
 
-        lastMove.x = move.x = Mathf.Lerp(0, Input.GetAxis("Horizontal") * maxSpeed, 0.8f); //Get the horizontal axis, interpolate between 0 and the input by 0.8
-        lastMove.y = move.y = Mathf.Lerp(0, Input.GetAxis("Vertical") * maxSpeed, 0.8f);   //Get the vertical axis, interpolate between 0 and the input by 0.8
+        if (!attacking)
+        {
+                if (Input.GetKey("left shift") || Input.GetKey("right shift"))  //Add the running multiplier
+            {
+                maxSpeed = 4 * runSpeedMultiplier;
+                anim.speed = 2F;                        //Increase the animation speed for running
+            } else
+            {
+                anim.speed = 1;
+            }
+
+            lastMove.x = move.x = Mathf.Lerp(0, Input.GetAxis("Horizontal") * maxSpeed, 0.8f); //Get the horizontal axis, interpolate between 0 and the input by 0.8
+            lastMove.y = move.y = Mathf.Lerp(0, Input.GetAxis("Vertical") * maxSpeed, 0.8f);   //Get the vertical axis, interpolate between 0 and the input by 0.8
+        }
 
         if (move.x != 0 || move.y != 0)
         {
